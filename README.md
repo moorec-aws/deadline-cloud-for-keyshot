@@ -27,7 +27,7 @@ This package provides a KeyShot plugin script that creates jobs for AWS Deadline
 
 1. Run `pip install deadline[gui]`
 2. Copy the file `deadline-cloud-for-keyshot/src/deadline/keyshot_submitter/Submit to AWS Deadline Cloud.py` to the KeyShot scripts folder for your OS:
-    - Windows (choose one): 
+    - Windows (choose one):
         - User scripts folder e.g. `%USERPROFILE%/Documents/KeyShot/Scripts`
         - System-wide scripts folder e.g. `%PROGRAMFILES%/KeyShot/Scripts`
     - Mac: `/Library/Application Support/KeyShot12/` or `/Library/Application Support/KeyShot/` depending on your version of Keyshot.
@@ -58,7 +58,10 @@ The KeyShot Adaptor implements the [OpenJD][openjd-adaptor-runtime] interface th
 * a standardized render application interface,
 * sticky rendering, where the application stays open between tasks
 
-Jobs created by the submitter use this adaptor by default.
+Jobs created by the submitter use this adaptor by default, and require that both the installed adaptor
+and the KeyShot executable be available on the PATH of the user that will be running your jobs.
+
+Or you can set the `KEYSHOT_EXECUTABLE` to point to the Keyshot executable.
 
 ### Using the KeyShot Adaptor
 
@@ -91,13 +94,13 @@ Jobs created by the submitter use this adaptor by default.
 
 ## Versioning
 
-This package's version follows [Semantic Versioning 2.0](https://semver.org/), but is still considered to be in its 
+This package's version follows [Semantic Versioning 2.0](https://semver.org/), but is still considered to be in its
 initial development, thus backwards incompatible versions are denoted by minor version bumps. To help illustrate how
 versions will increment during this initial development stage, they are described below:
 
-1. The MAJOR version is currently 0, indicating initial development. 
-2. The MINOR version is currently incremented when backwards incompatible changes are introduced to the public API. 
-3. The PATCH version is currently incremented when bug fixes or backwards compatible changes are introduced to the public API. 
+1. The MAJOR version is currently 0, indicating initial development.
+2. The MINOR version is currently incremented when backwards incompatible changes are introduced to the public API.
+3. The PATCH version is currently incremented when bug fixes or backwards compatible changes are introduced to the public API.
 
 ## Security
 
