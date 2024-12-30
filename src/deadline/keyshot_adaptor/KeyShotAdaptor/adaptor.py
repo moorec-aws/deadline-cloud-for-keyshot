@@ -317,7 +317,7 @@ class KeyShotAdaptor(Adaptor[AdaptorConfiguration]):
         # KeyShot has a bug where it must be started with an absolute path
         # or the render will hang (on macOS at least). The worker env can set
         # this varirable to override the path
-        keyshot_exe_env = os.getenv("DEADLINE_KEYSHOT_EXE", "")
+        keyshot_exe_env = os.environ.get("KEYSHOT_EXECUTABLE", "")
         args = []
         if not keyshot_exe_env:
             if sys.platform == "win32":
